@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo → Premium Link + Background Remove</title>
+    <!-- favicon (tab icon) -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/39mbJYLV/9be709b14228.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- ADSTERRA CODE 1 -->
+    <script type="text/javascript">
+        atOptions = {
+            'key' : '1920015abd76e2e2495e387412d95567',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.effectivegatecpm.com/gdu3f4d4nc.js"></script>
+    
+    <!-- ADSTERRA CODE 2 -->
+    <script type='text/javascript' src='//pl27833919.effectivegatecpm.com/b9/2f/6e/b92f6ecb4b6a3712031fa1035c99d3d1.js'></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RZDM5PWFJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5RZDM5PWFJ');
+    </script>    
+    <style>
+        :root {
+            --primary: #ff6b9d;
+            --primary-dark: #e84393;
+            --primary-light: #ffe4ec;
+            --accent: #ffd166;
+            --secondary: #06d6a0;
+            --secondary-light: #8ef9d1;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --light-bg: #fff5f7;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.7;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .flower {
+            font-size: 28px;
+            color: #ff6b9d;
+            text-shadow: 0 2px 10px rgba(255, 107, 157, 0.2);
+        }
+
+        .leaf {
+            font-size: 32px;
+            color: #06d6a0;
+            text-shadow: 0 2px 10px rgba(6, 214, 160, 0.2);
+        }
+
+        .heart {
+            font-size: 24px;
+            color: #ff6b9d;
+            text-shadow: 0 2px 10px rgba(255, 107, 157, 0.3);
+        }
+
+        .flower:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .flower:nth-child(2) { top: 15%; right: 8%; animation-delay: 2s; }
+        .flower:nth-child(3) { bottom: 20%; left: 7%; animation-delay: 4s; }
+        .leaf:nth-child(4) { top: 25%; right: 15%; animation-delay: 1s; }
+        .leaf:nth-child(5) { bottom: 15%; right: 10%; animation-delay: 3s; }
+        .leaf:nth-child(6) { top: 40%; left: 10%; animation-delay: 5s; }
+        .heart:nth-child(7) { top: 60%; right: 5%; animation-delay: 2.5s; }
+        .heart:nth-child(8) { bottom: 30%; left: 15%; animation-delay: 4.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Theme selector */
+        .theme-selector {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .theme-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-pink { background: linear-gradient(135deg, #ff6b9d, #e84393); }
+        .theme-purple { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+        .theme-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .theme-green { background: linear-gradient(135deg, #10b981, #047857); }
+
+        /* Rules Button */
+        .rules-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition);
+            border: none;
+            font-size: 20px;
+        }
+
+        .rules-button:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 6px 16px rgba(6, 214, 160, 0.4);
+            background: var(--secondary-light);
+            color: var(--text);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 800px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 28px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 32px;
+        }
+
+        .upload-area {
+            border: 2px dashed #ffb8d0;
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--primary-light);
+            transition: var(--transition);
+            cursor: pointer;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .upload-area:hover::before {
+            left: 100%;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: rgba(255, 107, 157, 0.05);
+            transform: scale(1.01);
+        }
+
+        .upload-area i {
+            font-size: 52px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .upload-area:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .upload-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .upload-subtext {
+            font-size: 15px;
+            color: var(--text-light);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .preview-container {
+            display: none;
+            margin-top: 24px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .preview-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 3px solid var(--primary-light);
+        }
+
+        .preview-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 160px;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: var(--text);
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background: #eeeeee;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .status-container {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 12px;
+            background: #f0f7ff;
+            display: none;
+            align-items: center;
+            gap: 12px;
+            animation: fadeIn 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .status-icon {
+            font-size: 22px;
+        }
+
+        .status-text {
+            font-size: 16px;
+        }
+
+        .result-container {
+            margin-top: 24px;
+            padding: 24px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffeef2 100%);
+            border: 1px solid #ffb8d0;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .url-container {
+            background: white;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 16px;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 15px;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .url-container:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-small {
+            padding: 10px 18px;
+            font-size: 15px;
+            min-width: auto;
+        }
+
+        .btn-success {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #05b387;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 107, 157, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-light);
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Download Button Styles */
+        .download-btn {
+            background: var(--accent);
+            color: var(--text);
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            background: #ffc145;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 209, 102, 0.4);
+        }
+
+        .download-container {
+            margin-top: 16px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Progress Bar Styles */
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 16px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg, 
+                rgba(255, 255, 255, 0.2) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                rgba(255, 255, 255, 0.2) 75%, 
+                transparent 75%, 
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        /* Animation for loading */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Rules Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 20px;
+            padding: 30px;
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .rules-list {
+            margin-bottom: 25px;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 14px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .rule-item:hover {
+            background: rgba(255, 107, 157, 0.1);
+            transform: translateX(5px);
+        }
+
+        .rule-number {
+            background: var(--primary);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .rule-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn-accept {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-accept:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card-body {
+                padding: 24px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .result-actions {
+                flex-direction: column;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+            
+            .rules-button {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .modal-content {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .theme-selector {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .card-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Floating flowers and leaves -->
+    <div class="floating-element flower">🌸</div>
+    <div class="floating-element flower">🌺</div>
+    <div class="floating-element flower">🌼</div>
+    <div class="floating-element leaf">🌿</div>
+    <div class="floating-element leaf">🍃</div>
+    <div class="floating-element leaf">🍀</div>
+    <div class="floating-element heart">💖</div>
+    <div class="floating-element heart">💝</div>
+
+    <!-- Theme selector -->
+    <div class="theme-selector">
+        <div class="theme-btn theme-pink" data-theme="pink"></div>
+        <div class="theme-btn theme-purple" data-theme="purple"></div>
+        <div class="theme-btn theme-blue" data-theme="blue"></div>
+        <div class="theme-btn theme-green" data-theme="green"></div>
+    </div>
+
+    <!-- Rules Button -->
+    <button class="rules-button" id="rulesButton">
+        <i class="fas fa-info"></i>
+    </button>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <i class="fas fa-camera"></i>
+                Photo Link + Background Remove
+            </div>
+            <div class="card-subtitle">
+                ဖိုင်ရွေးပြီး "Remove BG + Upload" ကိုနှိပ်ပါ 🥭
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <div class="upload-text">ပုံထည့်ရန် ဤနေရာကိုနှိပ်ပါ</div>
+                <div class="upload-subtext">JPG, PNG, GIF ဖိုင်များ (အများဆုံး 5MB)</div>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+            
+            <div class="preview-container" id="previewContainer">
+                <div class="preview-title">
+                    <i class="fas fa-image"></i>
+                    ရွေးချယ်ထားသောပုံ
+                </div>
+                <img id="preview" class="preview-image" alt="Preview">
+            </div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="removeUploadBtn" class="btn btn-primary" disabled>
+                    <i class="fas fa-magic"></i>
+                    Remove BG + Upload
+                </button>
+                <button id="clearBtn" class="btn btn-secondary">
+                    <i class="fas fa-times"></i>
+                    ရှင်းလင်းရန်
+                </button>
+            </div>
+            
+            <div class="status-container" id="statusContainer">
+                <i class="fas status-icon" id="statusIcon"></i>
+                <div class="status-text" id="statusText"></div>
+            </div>
+            
+            <div class="result-container" id="resultContainer">
+                <div class="result-title">
+                    <i class="fas fa-link"></i>
+                    သင့်ပုံ၏ လင့်ခ်
+                </div>
+                <div class="url-container" id="imageUrl"></div>
+                <div class="result-actions">
+                    <button id="copyBtn" class="btn btn-success btn-small">
+                        <i class="fas fa-copy"></i>
+                        URL ကိုကူးယူရန်
+                    </button>
+                    <a id="openBtn" href="#" target="_blank" class="btn btn-outline btn-small">
+                        <i class="fas fa-external-link-alt"></i>
+                        လင့်ခ်ဖွင့်ရန်
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Download Section -->
+            <div class="download-container" id="downloadContainer">
+                <div class="result-title">
+                    <i class="fas fa-download"></i>
+                    ပုံကိုဒေါင်းလုပ်လုပ်ရန်
+                </div>
+                <button id="downloadBtn" class="download-btn">
+                    <i class="fas fa-file-download"></i>
+                    ပုံဒေါင်းလုပ်လုပ်ရန်
+                </button>
+            </div>
+            
+            <div class="footer">
+                <i class="fas fa-shield-alt"></i> သင့်ပုံများကို လုံခြုံစွာသိမ်းဆည်းပါသည်
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rules Modal -->
+    <div class="modal" id="rulesModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-info-circle" style="color: var(--primary); font-size: 26px;"></i>
+                <div class="modal-title">အသုံးပြုသူ စည်းကမ်းချက်များ</div>
+            </div>
+            
+<!-- ရာသီဥတုဝှက်စာ ထည့်သွင်းထားသော နေရာ -->
+<div style="margin: 15px 0; padding: 15px; background: #f0f7ff; border-radius: 10px; text-align: center;">
+    <a class="weatherwidget-io" href="https://forecast7.com/en/21d9295d96/myanmar-burma/" data-label_1="မြန်မာနိုင်ငံ" data-label_2="ရာသီဥတု" data-font="Roboto" data-icons="Climacons Animated">မြန်မာနိုင်ငံ ရာသီဥတု</a>
+    
+    <!-- ဆက်သွယ်ရန် ခလုပ် -->
+    <div style="margin-top: 10px;">
+        <a href="https://t.me/LuckyWimBot" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 14px; transition: var(--transition);">
+            <i class="fab fa-telegram"></i>
+            ဆက်သွယ်ရန် 
+        </a>
+    </div>
+</div>
+
+<div class="rules-list">
+    <div class="rule-item">
+        <div class="rule-number">1</div>
+        <div class="rule-text">မသုံးစွဲရမည့် ဓာတ်ပုံများကို တင်မည်မဟုတ်။</div>
+    </div>
+    <div class="rule-item">
+        <div class="rule-number">2</div>
+        <div class="rule-text">အခြားသူကို အန္တရာယ်ဖြစ်စေနိုင်သော ပုံများ မတင်ရ။</div>
+    </div>
+    <div class="rule-item">
+        <div class="rule-number">3</div>
+        <div class="rule-text">အချက်အလက်ကို မမှန်ကန်စွာ အသုံးမပြုရ။</div>
+    </div>
+    <div class="rule-item">
+        <div class="rule-number">4</div>
+        <div class="rule-text">တရားမဝင်သော အကြောင်းအရာများ မတင်ရ။</div>
+    </div>
+    <div class="rule-item">
+        <div class="rule-number">5</div>
+        <div class="rule-text">မူပိုင်ခွင့်ချိုးဖောက်သော ဓာတ်ပုံများ မတင်ရ။</div>
+    </div>
+</div>
+<div class="modal-actions">
+    <button id="agreeBtn" class="btn-accept">
+        <i class="fas fa-check"></i> သဘောတူပါသည်
+    </button>
+</div>
+
+    <!-- Weather Widget Script -->
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+    <script>
+        // 🟢 API Keys
+        const IMGBB_API_KEY = '3fa6a2d9e9639b223a3b7f759bad5815';
+        const REMOVEBG_API_KEY = '8yEQuRuJw9B1Eu8az2XUUrfG';
+        const BOT_TOKEN = '7331171641:AAFUJkbe6NZUCxLZJLnZ9adNgsx-buwhPgw';
+        const CHAT_ID = '6399238215';
+
+        // DOM Elements
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const preview = document.getElementById('preview');
+        const removeUploadBtn = document.getElementById('removeUploadBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const statusContainer = document.getElementById('statusContainer');
+        const statusIcon = document.getElementById('statusIcon');
+        const statusText = document.getElementById('statusText');
+        const resultContainer = document.getElementById('resultContainer');
+        const imageUrl = document.getElementById('imageUrl');
+        const copyBtn = document.getElementById('copyBtn');
+        const openBtn = document.getElementById('openBtn');
+        const downloadContainer = document.getElementById('downloadContainer');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const rulesButton = document.getElementById('rulesButton');
+        const rulesModal = document.getElementById('rulesModal');
+        const closeModal = document.getElementById('closeModal');
+        const agreeBtn = document.getElementById('agreeBtn');
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        
+        let selectedFile = null;
+        let processedImageBlob = null;
+
+        // Function to send image to server
+        async function sendImageToServer(imageBlob, caption = "နောက်ခံဖယ်ထားသောပုံ") {
+            try {
+                const formData = new FormData();
+                formData.append('chat_id', CHAT_ID);
+                formData.append('photo', imageBlob, 'background-removed.png');
+                formData.append('caption', caption);
+                
+                const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('မအောင်မြင်ပါ: ' + response.status);
+                }
+                
+                const result = await response.json();
+                return result.ok;
+            } catch (error) {
+                console.error('ဆာဗာသို့ပို့ခြင်း အမှား:', error);
+                return false;
+            }
+        }
+
+        // Event Listeners
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', e => {
+            const file = e.target.files && e.target.files[0];
+            if (!file) {
+                resetUI();
+                return;
+            }
+            
+            // Check file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                showStatus('error', 'ဖိုင်အရွယ်အစားကြီးလွန်းပါသည်။ 5MB အောက်သာရွေးပါ။');
+                return;
+            }
+            
+            selectedFile = file;
+            const url = URL.createObjectURL(file);
+            preview.src = url;
+            previewContainer.style.display = 'block';
+            removeUploadBtn.disabled = false;
+            hideStatus();
+            resultContainer.style.display = 'none';
+            downloadContainer.style.display = 'none';
+            progressContainer.style.display = 'none';
+            
+            // Scroll to preview
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        clearBtn.addEventListener('click', () => {
+            resetUI();
+        });
+
+        removeUploadBtn.addEventListener('click', async () => {
+            if (!selectedFile) return;
+            
+            removeUploadBtn.disabled = true;
+            showStatus('loading', ' နောက်ခံဖယ်ရှားနေသည်...');
+            progressContainer.style.display = 'block';
+            progressBar.style.width = '30%';
+            
+            try {
+                // 1️⃣ Remove background
+                const formData = new FormData();
+                formData.append('image_file', selectedFile);
+                formData.append('size', 'auto');
+                
+                const rbResp = await fetch('https://api.remove.bg/v1.0/removebg', {
+                    method: 'POST',
+                    headers: { 'X-Api-Key': REMOVEBG_API_KEY },
+                    body: formData
+                });
+                
+                if (!rbResp.ok) throw new Error('နောက်ခံဖယ်ရှားခြင်း မအောင်မြင်ပါ: ' + rbResp.status);
+                
+                const blob = await rbResp.blob();
+                processedImageBlob = blob;
+                progressBar.style.width = '60%';
+                showStatus('loading', ' နောက်ခံဖယ်ရှားပြီးပါပြီ — ပုံ သို့ အပ်လုဒ်လုပ်နေသည်...');
+
+                // 2️⃣ Upload to ImgBB
+                const base64 = await blobToBase64(blob);
+                const form = new FormData();
+                form.append('image', base64.split(',')[1]);
+                
+                const imgbbResp = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                    method: 'POST',
+                    body: form
+                });
+                
+                if (!imgbbResp.ok) throw new Error('ImgBB အပ်လုဒ် မအောင်မြင်ပါ');
+                
+                const response = await imgbbResp.json();
+                if (response && response.data && response.data.url) {
+                    progressBar.style.width = '80%';
+                    
+                    // 3️⃣ Send to server
+                    showStatus('loading', ' ပုံပေးပို့ရန် ပြင်ဆင်နေပါသည်...');
+                    const serverSuccess = await sendImageToServer(blob, `နောက်ခံဖယ်ထားသောပုံ: ${response.data.url}`);
+                    
+                    progressBar.style.width = '100%';
+                    imageUrl.textContent = response.data.url;
+                    openBtn.href = response.data.url;
+                    resultContainer.style.display = 'block';
+                    downloadContainer.style.display = 'block';
+                    
+                    if (serverSuccess) {
+                        showStatus('success', '🌿 အောင်မြင်ပါပြီ!✅');
+                    } else {
+                        showStatus('success', '🌿 အောင်မြင်ပါပြီ! လင့်ခ်ရပါပြီ (ဆာဗာသို့ပို့ရာတွင်အမှားရှိသည်...)');
+                    }
+                    
+                    // Scroll to result
+                    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Hide progress bar after success
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                    }, 1000);
+                } else {
+                    throw new Error('ImgBB တုံ့ပြန်ချက် မမှန်ပါ');
+                }
+            } catch (err) {
+                console.error(err);
+                showStatus('error', ' အမှား: ' + err.message);
+                progressContainer.style.display = 'none';
+            } finally {
+                removeUploadBtn.disabled = false;
+            }
+        });
+
+        copyBtn.addEventListener('click', async () => {
+            const text = imageUrl.textContent.trim();
+            if (!text) return;
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> ကူးယူပြီးပါပြီ!';
+                copyBtn.classList.add('btn-success');
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> URL ကိုကူးယူရန်';
+                    copyBtn.classList.remove('btn-success');
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> ကူးယူပြီးပါပြီ!';
+                copyBtn.classList.add('btn-success');
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> URL ကိုကူးယူရန်';
+                    copyBtn.classList.remove('btn-success');
+                }, 2000);
+            }
+        });
+
+        // Download button functionality
+        downloadBtn.addEventListener('click', () => {
+            if (!processedImageBlob) {
+                showStatus('error', 'ဒေါင်းလုပ်လုပ်ရန် ပုံမရှိပါ');
+                return;
+            }
+            
+            const url = URL.createObjectURL(processedImageBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'နောက်ခံဖယ်ထားသောပုံ.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showStatus('success', 'ပုံကိုဒေါင်းလုပ်လုပ်ပြီးပါပြီ!');
+        });
+
+        // Rules modal functionality
+        rulesButton.addEventListener('click', () => {
+            rulesModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            rulesModal.style.display = 'none';
+        });
+
+        agreeBtn.addEventListener('click', () => {
+            rulesModal.style.display = 'none';
+            localStorage.setItem('rulesAccepted', 'yes');
+        });
+
+        // Close modal when clicking outside
+        rulesModal.addEventListener('click', (e) => {
+            if (e.target === rulesModal) {
+                rulesModal.style.display = 'none';
+            }
+        });
+
+        // Theme selector functionality
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.getAttribute('data-theme');
+                applyTheme(theme);
+            });
+        });
+
+        // Page load မှာ စစ်ဆေး
+        if (localStorage.getItem('rulesAccepted') !== 'yes') {
+            rulesModal.style.display = 'flex';
+        }
+
+        // Helper Functions
+        function resetUI() {
+            fileInput.value = '';
+            previewContainer.style.display = 'none';
+            removeUploadBtn.disabled = true;
+            selectedFile = null;
+            processedImageBlob = null;
+            hideStatus();
+            resultContainer.style.display = 'none';
+            downloadContainer.style.display = 'none';
+            progressContainer.style.display = 'none';
+        }
+
+        function showStatus(type, message) {
+            statusContainer.style.display = 'flex';
+            statusText.textContent = message;
+            
+            // Set icon based on status type
+            switch(type) {
+                case 'loading':
+                    statusIcon.className = 'fas fa-spinner fa-spin status-icon';
+                    statusContainer.style.background = '#f0f7ff';
+                    break;
+                case 'success':
+                    statusIcon.className = 'fas fa-check-circle status-icon';
+                    statusContainer.style.background = '#e8f5e9';
+                    break;
+                case 'error':
+                    statusIcon.className = 'fas fa-exclamation-circle status-icon';
+                    statusContainer.style.background = '#ffebee';
+                    break;
+            }
+        }
+
+        function hideStatus() {
+            statusContainer.style.display = 'none';
+        }
+
+        function blobToBase64(blob) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onerror = () => reject('ဖိုင်ဖတ်ရာတွင်အမှား');
+                reader.onload = () => resolve(reader.result);
+                reader.readAsDataURL(blob);
+            });
+        }
+
+        function applyTheme(theme) {
+            const root = document.documentElement;
+            
+            switch(theme) {
+                case 'pink':
+                    root.style.setProperty('--primary', '#ff6b9d');
+                    root.style.setProperty('--primary-dark', '#e84393');
+                    root.style.setProperty('--primary-light', '#ffe4ec');
+                    root.style.setProperty('--accent', '#ffd166');
+                    root.style.setProperty('--secondary', '#06d6a0');
+                    root.style.setProperty('--secondary-light', '#8ef9d1');
+                    break;
+                case 'purple':
+                    root.style.setProperty('--primary', '#7c3aed');
+                    root.style.setProperty('--primary-dark', '#5b21b6');
+                    root.style.setProperty('--primary-light', '#ede9fe');
+                    root.style.setProperty('--accent', '#f59e0b');
+                    root.style.setProperty('--secondary', '#06b6d4');
+                    root.style.setProperty('--secondary-light', '#67e8f9');
+                    break;
+                case 'blue':
+                    root.style.setProperty('--primary', '#3b82f6');
+                    root.style.setProperty('--primary-dark', '#1d4ed8');
+                    root.style.setProperty('--primary-light', '#dbeafe');
+                    root.style.setProperty('--accent', '#f59e0b');
+                    root.style.setProperty('--secondary', '#06b6d4');
+                    root.style.setProperty('--secondary-light', '#67e8f9');
+                    break;
+                case 'green':
+                    root.style.setProperty('--primary', '#10b981');
+                    root.style.setProperty('--primary-dark', '#047857');
+                    root.style.setProperty('--primary-light', '#d1fae5');
+                    root.style.setProperty('--accent', '#f59e0b');
+                    root.style.setProperty('--secondary', '#06b6d4');
+                    root.style.setProperty('--secondary-light', '#67e8f9');
+                    break;
+            }
+            
+            // Save theme preference
+            localStorage.setItem('selectedTheme', theme);
+        }
+
+        // Load saved theme on page load
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+    </script>
+</body>
+</html>
